@@ -1,0 +1,270 @@
+{
+    "vim.easymotion": true,
+    "vim.camelCaseMotion.enable": true,
+    "vim.sneak": true,
+    "vim.useSystemClipboard": false,
+    "vim.smartRelativeLine": true,
+    "vim.handleKeys": {
+        "<C-f>": false,
+        "<C-b>": false,
+        "<C-d>": true,
+        "<C-s>": false,
+        "<C-z>": false
+    },
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<space>"
+            ],
+            "commands": [
+                "vspacecode.space"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "i"
+            ],
+            "commands": [
+                "editor.action.goToImplementation"
+            ]
+        },
+        // {
+        //     "before": [
+        //         ","
+        //     ],
+        //     "commands": [
+        //         "vspacecode.space",
+        //         {
+        //             "command": "whichkey.triggerKey",
+        //             "args": "m"
+        //         }
+        //     ]
+        // },
+        {
+            "before": [
+                "H"
+            ],
+            "after": [
+                "<c-pageup>"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "after": [
+                "<c-pagedown>"
+            ]
+        },
+        {
+            "before": [
+                "u"
+            ],
+            "commands": [
+                "undo"
+            ]
+        },
+        {
+            "before": [
+                "<c-r>"
+            ],
+            "commands": [
+                "redo"
+            ]
+        },
+        {
+            "before": [
+                "K"
+            ],
+            "after": [
+                "g",
+                "h",
+            ]
+        },
+        {
+            "before": [
+                "<c-u>"
+            ],
+            "after": [
+                "<c-u>",
+                "z",
+                "z",
+            ]
+        },
+        {
+            "before": [
+                "<c-d>"
+            ],
+            "after": [
+                "<c-d>",
+                "z",
+                "z",
+            ]
+        },
+        {
+            "before": [
+                "s"
+            ],
+            "after": [
+                "c",
+                "l",
+            ]
+        },
+        {
+            "before": [
+                "S"
+            ],
+            "after": [
+                "c",
+                "c",
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "z",
+            ],
+            "after": [
+                "s",
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "x",
+            ],
+            "after": [
+                "S",
+            ]
+        },
+        // {
+        //     "before": [
+        //         "<c-i>"
+        //     ],
+        //     "commands": [
+        //         "workbench.action.navigateForward"
+        //     ]
+        // },
+        // {
+        //     "before": [
+        //         "<c-o>"
+        //     ],
+        //     "commands": [
+        //         "workbench.action.navigateBack"
+        //     ]
+        // }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<space>"
+            ],
+            "commands": [
+                "vspacecode.space"
+            ]
+        },
+        // {
+        //     "before": [
+        //         ","
+        //     ],
+        //     "commands": [
+        //         "vspacecode.space",
+        //         {
+        //             "command": "whichkey.triggerKey",
+        //             "args": "m"
+        //         }
+        //     ]
+        // },
+        {
+            "before": [
+                "y"
+            ],
+            "after": [
+                "y",
+                "g",
+                "v",
+                "<esc>"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "y",
+            ],
+            "after": [
+                "\"",
+                "*",
+                "y",
+                "g",
+                "v",
+                "<esc>"
+            ]
+        },
+        {
+            "before": [
+                ">"
+            ],
+            "after": [
+                ">",
+                "g",
+                "v",
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "after": [
+                "<",
+                "g",
+                "v",
+            ]
+        },
+        // {
+        //     "before": [
+        //         "J"
+        //     ],
+        //     "commands": [
+        //         "editor.action.moveLinesDownAction",
+        //     ],
+        // },
+        // {
+        //     "before": [
+        //         "K"
+        //     ],
+        //     "commands": [
+        //         "editor.action.moveLinesUpAction",
+        //     ],
+        // }
+        // {
+        //     "before": [
+        //         "p"
+        //     ],
+        //     "after": [
+        //         "\"",
+        //         "_",
+        //         "d",
+        //         "P",
+        //         "'",
+        //         "[",
+        //         "V",
+        //         "'",
+        //         "]",
+        //         "="
+        //     ]
+        // },
+    ],
+    "editor.renderWhitespace": "none",
+    "workbench.startupEditor": "none",
+    "security.workspace.trust.untrustedFiles": "open",
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "workbench.colorTheme": "Carbon Owl",
+    "extensions.ignoreRecommendations": true,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "explorer.compactFolders": false,
+    "terminal.integrated.defaultProfile.windows": "Command Prompt"
+}

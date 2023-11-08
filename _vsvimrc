@@ -1,0 +1,149 @@
+set rnu
+"set hlsearch
+set ignorecase
+set incsearch
+set smartcase
+set scrolloff=8
+
+"Remappings
+nnoremap H :vsc Window.PreviousTab<CR>
+nnoremap L :vsc Window.NextTab<CR>
+nnoremap K :vsc Edit.QuickInfo<CR>
+vnoremap gc :vsc Edit.ToggleLineComment<CR>
+nnoremap gcc :vsc Edit.ToggleLineComment<CR><ESC>
+
+vnoremap <space>p "_dP
+vnoremap <space>d "_dD
+
+nnoremap <space><space> :vsc View.CommandWindow<CR>
+nnoremap <space>; :vsc Edit.ToggleLineComment<CR>
+nnoremap <space>* :vsc Edit.NavigateTo<CR>
+nnoremap <space>/ :vsc Edit.GoToAll<CR>
+nnoremap <a-left> :vsc View.NavigateBackward<CR>
+nnoremap <a-right> :vsc View.NavigateForward<CR>
+"view.viewCode f7
+
+"Window
+nnoremap <space>ws <c-w>s
+nnoremap <space>wv <c-w>v
+nnoremap <space>wl <c-w>l
+nnoremap <space>wh <c-w>h
+nnoremap <space>wk <c-w>k
+nnoremap <space>wj <c-w>j
+
+"nnoremap <space>ws vsc Window.SplitWindowHorizontally<CR>
+"nnoremap <space>ws :vsc Window.SplitWindowVertically<CR>
+nnoremap <space>wd <c-w>c
+
+"Buffer
+nnoremap <space>bd :vsc File.Close<CR>
+nnoremap <space>bp :vsc Window.PreviousTab<CR>
+nnoremap <space>bn :vsc Window.NextTab<CR>
+nnoremap <space>bL :vsc Window.MovetoNextTabGroup<CR>
+nnoremap <space>bH :vsc Window.MovetoPreviousTabGroup<CR>
+nnoremap <space>bt :vsc Window.PinTab<CR>
+
+"File
+nnoremap <space>fs :vsc File.SaveSelectedItems<CR>
+nnoremap <space>fS :vsc File.SaveAll<CR>
+nnoremap <space>ff :vsc Edit.GoToFile<CR>
+nnoremap <space>fr :vsc Edit.GoToRecentFile<CR>
+nnoremap <space>fn :vsc ProjectandSolutionContextMenus.Project.Add.NewEmptyFile<CR>
+
+"Jump
+nnoremap <space>jv :vsc View.ClassView<CR>
+nnoremap <space>jl :vsc Edit.GoTo<CR>
+nnoremap <space>jI :vsc Edit.GoToSymbol<CR>
+nnoremap <space>j+ :vsc Edit.FormatDocument<CR>
+nnoremap <space>j= :vsc Edit.FormatSelection<CR>
+nnoremap <space>ji :vsc Edit.GoToImplementation<CR>
+
+"Symbol
+nnoremap <space>sJ :vsc Edit.GoToSymbol<CR>
+nnoremap <space>ss :vsc Edit.Find<CR>
+nnoremap <space>se :vsc Refactor.Rename<CR>
+
+"Insert
+nnoremap <space>is :vsc Edit.InsertSnippet<CR>
+nnoremap <space>ik :vsc Edit.LineOpenAbove<CR>
+nnoremap <space>ij :vsc Edit.LineOpenBelow<CR>
+
+"edit.gotofile edit.gotorecent edit.gotonextissue (en / cn)
+
+"Control keys
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-q> :vsc File.Close<CR>
+
+"Insert mode / autocomplete
+inoremap <A-l> <Tab>
+
+"GoTo Remap
+nnoremap gr :vsc Edit.FindAllReferences<CR>
+"nnoremap gi :vsc Edit.GoToImplementation<CR>
+nnoremap gi `.a
+nnoremap gp :vsc Edit.PeekDefinition<CR>
+nnoremap ]m :vsc Edit.NextMethod<CR>
+nnoremap [m :vsc Edit.PreviousMethod<CR>
+
+"1Key <space> Remap
+nnoremap <space>0 :vsc View.SolutionExplorer<CR>
+nnoremap <space>o :vsc View.Output<CR>
+nnoremap <space>' :vsc View.Terminal<CR>
+nnoremap <space>g :vsc Edit.GoToAll<CR>
+nnoremap <space>fer :source C:/Users/awilliams/_vsvimrc<CR>
+nnoremap <space>fed :e C:/Users/awilliams/_vsvimrc<CR>
+nnoremap <esc> :noh<CR>
+
+"Major Mode Remap
+// nnoremap <space>msi :vsc View.C#Interactive<CR>
+// nnoremap <space>msl :vsc InteractiveConsole.ExecuteInInteractive<CR>
+nnoremap <space>msl <s-v> :vsc InteractiveConsole.ExecuteInInteractive<CR>
+vnoremap <space>msl :vsc InteractiveConsole.ExecuteInInteractive<CR>
+
+"Text Mode Remap
+nnoremap <space>xr :vsc Refactor.Rename<CR>
+
+"Major Refactor Remap
+nnoremap <space>rs :vsc Edit.SurroundWith<CR>
+vnoremap <space>rs :vsc Edit.SurroundWith<CR>
+nnoremap <space>rr :vsc Refactor.Rename<CR>
+nnoremap <space>rm :vsc Refactor.ExtractMethod<CR>
+
+"Major Test Remap
+nnoremap <space>tt :vsc TestExplorer.RunAllTestsInContext<CR>
+nnoremap <space>td :vsc TestExplorer.DebugAllTestsInContext<CR>
+nnoremap <space>ta :vsc TestExplorer.RunAllTests<CR>
+nnoremap <space>te :vsc TestExplorer.ShowTestExplorer<CR>
+
+"nnoremap <space>db :vsc Debug.ToggleBreakpoint<CR> use F9
+
+"Debug Remap
+nnoremap <space>dd :vsc Debug.Start<CR>
+nnoremap <space>dD :vsc Debug.StartWithoutDebugging<CR>
+nnoremap <space>di :vsc Debug.StepInto<CR>
+nnoremap <space>do :vsc Debug.StepOut<CR>
+nnoremap <space>ds :vsc Debug.StepOver<CR>
+nnoremap <space>dj :vsc Debug.RunToCursor<CR>
+
+nnoremap <space>dbb :vsc Debug.ToggleBreakpoint<CR>
+
+nnoremap <space>dW :vsc Debug.AddWatch<CR>
+nnoremap <space>dS :vsc Debug.StopDebugging<CR>
+nnoremap <space>dR :vsc Debug.Restart<CR>
+
+nnoremap <space>dv :vsc Debug.Immediate<CR>
+nnoremap <space>dw :vsc Debug.Watch1<CR>
+nnoremap <space>dl :vsc Debug.Locals<CR>
+nnoremap <space>da :vsc Debug.Autos<CR>
+
+"insert mode
+inoremap <s-tab> <c-d>
+
+"Additional Changes (not through vimrc)
+"<A-j> edit.lineDown
+"<A-k> edit.lineUp
+"<C-q> File.Close
+"editor.autoClosingBrackets = never

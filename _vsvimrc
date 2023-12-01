@@ -11,7 +11,20 @@ nnoremap L :vsc Window.NextTab<CR>
 nnoremap K :vsc Edit.QuickInfo<CR>
 vnoremap gc :vsc Edit.ToggleLineComment<CR>
 nnoremap gcc :vsc Edit.ToggleLineComment<CR><ESC>
+nnoremap vae ggVG
 
+nnoremap vii vi{
+nnoremap cii vi{c
+nnoremap dii vi{d
+nnoremap yii vi{y
+
+nnoremap vai [{kVj]}
+nnoremap cai [{kVj]}c
+nnoremap dai [{kVj]}d
+nnoremap yai [{kVj]}y
+
+nnoremap p pv`]=<ESC>
+vnoremap p pv`]=<ESC>
 vnoremap <space>p "_dP
 vnoremap <space>d "_dD
 
@@ -21,6 +34,8 @@ nnoremap <space>* :vsc Edit.NavigateTo<CR>
 nnoremap <space>/ :vsc Edit.GoToAll<CR>
 nnoremap <a-left> :vsc View.NavigateBackward<CR>
 nnoremap <a-right> :vsc View.NavigateForward<CR>
+nnoremap <c-o> :vsc View.NavigateBackward<CR>
+nnoremap <c-i> :vsc View.NavigateForward<CR>
 "view.viewCode f7
 
 "Window
@@ -82,6 +97,8 @@ inoremap <A-l> <Tab>
 
 "GoTo Remap
 nnoremap gr :vsc Edit.FindAllReferences<CR>
+nnoremap <space>xa :vsc Edit.FindAllReferences<CR>
+nnoremap <space>sr :vsc Edit.FindAllReferences<CR>
 "nnoremap gi :vsc Edit.GoToImplementation<CR>
 nnoremap gi `.a
 nnoremap gp :vsc Edit.PeekDefinition<CR>
@@ -95,11 +112,12 @@ nnoremap <space>' :vsc View.Terminal<CR>
 nnoremap <space>g :vsc Edit.GoToAll<CR>
 nnoremap <space>fer :source C:/Users/awilliams/_vsvimrc<CR>
 nnoremap <space>fed :e C:/Users/awilliams/_vsvimrc<CR>
+nnoremap <space>feD :e C:/Users/awilliams/_vsvimrc<CR>
 nnoremap <esc> :noh<CR>
 
 "Major Mode Remap
-// nnoremap <space>msi :vsc View.C#Interactive<CR>
-// nnoremap <space>msl :vsc InteractiveConsole.ExecuteInInteractive<CR>
+"nnoremap <space>msi :vsc View.C#Interactive<CR>
+"nnoremap <space>msl :vsc InteractiveConsole.ExecuteInInteractive<CR>
 nnoremap <space>msl <s-v> :vsc InteractiveConsole.ExecuteInInteractive<CR>
 vnoremap <space>msl :vsc InteractiveConsole.ExecuteInInteractive<CR>
 

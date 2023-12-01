@@ -1,11 +1,15 @@
-set rnu
-"set hlsearch
-set ignorecase
-set incsearch
-set smartcase
-set scrolloff=8
+"_vsvimrc, put in %USERPROFILE% eg. C:/Users/awilliams
+"Extensions required: VsVim, XNerdTree, Add New File 64 Bit
 
-"Remappings
+"SET CONFIG
+set rnu  "Relative numbers
+set incsearch  "/ Search highlights as typed in
+"set hlsearch  / Search stays highlighted
+set ignorecase  "Case is ignored
+set smartcase  "Case not ignored if using capital letter in search
+set scrolloff=8  "Automatically scrolls down as cursor gets close to bottom of page
+
+"REMAPPINGS
 nnoremap H :vsc Window.PreviousTab<CR>
 nnoremap L :vsc Window.NextTab<CR>
 nnoremap K :vsc Edit.QuickInfo<CR>
@@ -23,19 +27,18 @@ nnoremap cai [{kVj]}c
 nnoremap dai [{kVj]}d
 nnoremap yai [{kVj]}y
 
-nnoremap p pv`]=<ESC>
-vnoremap p pv`]=<ESC>
-vnoremap <space>p "_dP
-vnoremap <space>d "_dD
+"nnoremap p pv`]=<ESC>  Autoformat
+"vnoremap p pv`]=<ESC>
+"vnoremap <space>p "_dP
+"vnoremap <space>d "_dD
 
 nnoremap <space><space> :vsc View.CommandWindow<CR>
 nnoremap <space>; :vsc Edit.ToggleLineComment<CR>
+vnoremap <space>; :vsc Edit.ToggleLineComment<CR><ESC>
 nnoremap <space>* :vsc Edit.NavigateTo<CR>
 nnoremap <space>/ :vsc Edit.GoToAll<CR>
-nnoremap <a-left> :vsc View.NavigateBackward<CR>
-nnoremap <a-right> :vsc View.NavigateForward<CR>
-nnoremap <c-o> :vsc View.NavigateBackward<CR>
-nnoremap <c-i> :vsc View.NavigateForward<CR>
+"nnoremap <a-left> :vsc View.NavigateBackward<CR>
+"nnoremap <a-right> :vsc View.NavigateForward<CR>
 "view.viewCode f7
 
 "Window
@@ -45,9 +48,6 @@ nnoremap <space>wl <c-w>l
 nnoremap <space>wh <c-w>h
 nnoremap <space>wk <c-w>k
 nnoremap <space>wj <c-w>j
-
-"nnoremap <space>ws vsc Window.SplitWindowHorizontally<CR>
-"nnoremap <space>ws :vsc Window.SplitWindowVertically<CR>
 nnoremap <space>wd <c-w>c
 
 "Buffer
@@ -63,7 +63,7 @@ nnoremap <space>fs :vsc File.SaveSelectedItems<CR>
 nnoremap <space>fS :vsc File.SaveAll<CR>
 nnoremap <space>ff :vsc Edit.GoToFile<CR>
 nnoremap <space>fr :vsc Edit.GoToRecentFile<CR>
-nnoremap <space>fn :vsc ProjectandSolutionContextMenus.Project.Add.NewEmptyFile<CR>
+nnoremap <space>fn :vsc AddQuickFile<CR>
 
 "Jump
 nnoremap <space>jv :vsc View.ClassView<CR>
@@ -77,30 +77,30 @@ nnoremap <space>ji :vsc Edit.GoToImplementation<CR>
 nnoremap <space>sJ :vsc Edit.GoToSymbol<CR>
 nnoremap <space>ss :vsc Edit.Find<CR>
 nnoremap <space>se :vsc Refactor.Rename<CR>
+nnoremap <space>sr :vsc Edit.FindAllReferences<CR>
 
 "Insert
 nnoremap <space>is :vsc Edit.InsertSnippet<CR>
 nnoremap <space>ik :vsc Edit.LineOpenAbove<CR>
 nnoremap <space>ij :vsc Edit.LineOpenBelow<CR>
 
-"edit.gotofile edit.gotorecent edit.gotonextissue (en / cn)
-
 "Control keys
+nnoremap <C-o> :vsc View.NavigateBackward<CR>
+nnoremap <C-i> :vsc View.NavigateForward<CR>
+"nnoremap <C-w> :vsc Window.CloseDocumentWindow<CR>
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
-nnoremap <C-q> :vsc File.Close<CR>
+nnoremap u :vsc Edit.Undo<CR>
+nnoremap <C-r> :vsc Edit.Redo<CR>
 
 "Insert mode / autocomplete
-inoremap <A-l> <Tab>
+"inoremap <A-l> <Tab>
 
 "GoTo Remap
 nnoremap gr :vsc Edit.FindAllReferences<CR>
-nnoremap <space>xa :vsc Edit.FindAllReferences<CR>
-nnoremap <space>sr :vsc Edit.FindAllReferences<CR>
-"nnoremap gi :vsc Edit.GoToImplementation<CR>
-nnoremap gi `.a
+nnoremap gi :vsc Edit.GoToImplementation<CR>
 nnoremap gp :vsc Edit.PeekDefinition<CR>
 nnoremap ]m :vsc Edit.NextMethod<CR>
 nnoremap [m :vsc Edit.PreviousMethod<CR>
@@ -113,30 +113,27 @@ nnoremap <space>g :vsc Edit.GoToAll<CR>
 nnoremap <space>fer :source C:/Users/awilliams/_vsvimrc<CR>
 nnoremap <space>fed :e C:/Users/awilliams/_vsvimrc<CR>
 nnoremap <space>feD :e C:/Users/awilliams/_vsvimrc<CR>
-nnoremap <esc> :noh<CR>
+"nnoremap <esc> :noh<CR>
 
 "Major Mode Remap
-"nnoremap <space>msi :vsc View.C#Interactive<CR>
-"nnoremap <space>msl :vsc InteractiveConsole.ExecuteInInteractive<CR>
-nnoremap <space>msl <s-v> :vsc InteractiveConsole.ExecuteInInteractive<CR>
-vnoremap <space>msl :vsc InteractiveConsole.ExecuteInInteractive<CR>
+"nnoremap <space>msl <s-v> :vsc InteractiveConsole.ExecuteInInteractive<CR>
+"vnoremap <space>msl :vsc InteractiveConsole.ExecuteInInteractive<CR>
 
 "Text Mode Remap
 nnoremap <space>xr :vsc Refactor.Rename<CR>
+nnoremap <space>xa :vsc Edit.FindAllReferences<CR>
 
 "Major Refactor Remap
-nnoremap <space>rs :vsc Edit.SurroundWith<CR>
-vnoremap <space>rs :vsc Edit.SurroundWith<CR>
-nnoremap <space>rr :vsc Refactor.Rename<CR>
-nnoremap <space>rm :vsc Refactor.ExtractMethod<CR>
+"nnoremap <space>rs :vsc Edit.SurroundWith<CR>
+"vnoremap <space>rs :vsc Edit.SurroundWith<CR>
+"nnoremap <space>rr :vsc Refactor.Rename<CR>
+"nnoremap <space>rm :vsc Refactor.ExtractMethod<CR>
 
 "Major Test Remap
-nnoremap <space>tt :vsc TestExplorer.RunAllTestsInContext<CR>
-nnoremap <space>td :vsc TestExplorer.DebugAllTestsInContext<CR>
-nnoremap <space>ta :vsc TestExplorer.RunAllTests<CR>
-nnoremap <space>te :vsc TestExplorer.ShowTestExplorer<CR>
-
-"nnoremap <space>db :vsc Debug.ToggleBreakpoint<CR> use F9
+"nnoremap <space>tt :vsc TestExplorer.RunAllTestsInContext<CR>
+"nnoremap <space>td :vsc TestExplorer.DebugAllTestsInContext<CR>
+"nnoremap <space>ta :vsc TestExplorer.RunAllTests<CR>
+"nnoremap <space>te :vsc TestExplorer.ShowTestExplorer<CR>
 
 "Debug Remap
 nnoremap <space>dd :vsc Debug.Start<CR>
@@ -158,10 +155,4 @@ nnoremap <space>dl :vsc Debug.Locals<CR>
 nnoremap <space>da :vsc Debug.Autos<CR>
 
 "insert mode
-inoremap <s-tab> <c-d>
-
-"Additional Changes (not through vimrc)
-"<A-j> edit.lineDown
-"<A-k> edit.lineUp
-"<C-q> File.Close
-"editor.autoClosingBrackets = never
+"inoremap <s-tab> <c-d>
